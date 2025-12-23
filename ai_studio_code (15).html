@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البحث العلمي | حسين المانع</title>
+    
+    <!-- استدعاء أفضل الخطوط العربية لعام 2025 -->
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --accent: #3b82f6;
+            --neural-green: #10b981;
+            --deep-navy: #020617;
+            --aurora-1: rgba(59, 130, 246, 0.18);
+            --aurora-2: rgba(139, 92, 246, 0.12);
+            /* ضبط الخطوط الأساسية */
+            --font-head: 'Almarai', sans-serif;
+            --font-body: 'IBM Plex Sans Arabic', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-body);
+            background-color: #fafbfc;
+            color: var(--deep-navy);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            background: 
+                radial-gradient(circle at 10% 15%, var(--aurora-1) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, var(--aurora-2) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        .content-container { max-width: 1000px; margin: auto; padding: 20px; }
+
+        /* --- Header: High-End Typography --- */
+        .hero {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.4rem, 6vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-bottom: 50px;
+            color: var(--deep-navy);
+            text-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            opacity: 0; transform: translateY(20px);
+            animation: revealUp 1s ease-out forwards;
+        }
+
+        .researcher-name {
+            font-family: var(--font-body);
+            font-size: clamp(1.5rem, 5vw, 2.8rem);
+            font-weight: 100; /* نحيف جداً ليعطي فخامة عصرية */
+            letter-spacing: 6px;
+            color: var(--accent);
+            opacity: 0;
+            animation: fadeIn 2.5s forwards 0.5s;
+        }
+
+        /* --- Text Blocks: Organic flow --- */
+        .organic-info { padding: 80px 0; display: flex; flex-direction: column; gap: 80px; }
+
+        .section-flow {
+            padding-right: 30px;
+            border-right: 2px solid var(--accent);
+            position: relative;
+        }
+
+        .section-flow h3 {
+            font-family: var(--font-head);
+            font-size: 1.7rem; font-weight: 700; margin-bottom: 25px;
+            color: var(--deep-navy); display: flex; align-items: center; gap: 15px;
+        }
+
+        .section-flow p {
+            font-size: 1.15rem; font-weight: 300; color: #475569;
+            line-height: 2.2; /* زيادة التباعد لراحة العين */
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* --- Steps: Borderless Nodes --- */
+        .neural-path-wrap { margin: 80px 0; }
+        .neural-step {
+            padding: 50px; border-radius: 40px; margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .neural-step:hover { 
+            background: white; transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 40px 80px rgba(59, 130, 246, 0.08); 
+        }
+
+        .step-label { font-size: 0.8rem; font-weight: 700; color: var(--accent); letter-spacing: 2px; }
+        .neural-step h4 { 
+            font-family: var(--font-head); margin: 15px 0; 
+            font-size: 1.4rem; color: var(--deep-navy); font-weight: 800; 
+        }
+
+        /* --- Statistics: Pure Typographic Experience --- */
+        .data-landscape {
+            padding: 100px 0; text-align: center;
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 100px;
+        }
+        .stat-giant { 
+            font-family: var(--font-head); font-size: 4.5rem; 
+            font-weight: 800; color: var(--deep-navy); margin-bottom: 10px;
+        }
+        .stat-tag { font-size: 1rem; color: #64748b; font-weight: 300; max-width: 250px; margin: auto; }
+
+        /* --- Feedback Gateway: Sophisticated UI --- */
+        .feedback-portal {
+            background: rgba(15, 23, 42, 0.02);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            border-radius: 60px; padding: 100px 40px; margin: 100px 0;
+            text-align: center; backdrop-filter: blur(40px);
+        }
+
+        .feedback-portal h2 { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; margin-bottom: 20px; }
+        .feedback-portal p { font-size: 1.15rem; color: #64748b; font-weight: 200; margin-bottom: 50px; }
+
+        .cta-forms-btn {
+            display: inline-flex; align-items: center; gap: 15px;
+            background: var(--deep-navy); color: white; text-decoration: none;
+            padding: 22px 60px; border-radius: 100px; font-weight: 600;
+            font-size: 1.2rem; transition: 0.5s ease;
+        }
+
+        .cta-forms-btn:hover {
+            background: var(--accent); transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .pill-ref {
+            display: inline-block; padding: 10px 30px; border-radius: 100px;
+            border: 1px solid rgba(15,23,42,0.1); color: var(--deep-navy);
+            text-decoration: none; font-size: 0.8rem; margin: 10px; font-weight: 500;
+        }
+
+        footer { text-align: center; padding: 80px 20px; color: #94a3b8; font-size: 0.85rem; border-top: 1px dashed #e2e8f0; letter-spacing: 1px; }
+
+        @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        /* Mobile Typography Fine-tuning */
+        @media (max-width: 768px) {
+            .main-title { font-size: 1.5rem; }
+            .stat-giant { font-size: 3.5rem; }
+            .researcher-name { font-size: 1.8rem; }
+            .section-flow { padding-right: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="content-container">
+        
+        <!-- Header Section -->
+        <header class="hero">
+            <h1 class="main-title">
+                استخدام الخلايا الجذعية المستحثة (iPSCs) وواجهات الدماغ-الآلة (BCIs) لعلاج الكسل البصري لدى البالغين
+            </h1>
+            <div class="researcher-name">حسين عبدالله المانع</div>
+        </header>
+
+        <!-- Information Narrative -->
+        <section class="organic-info">
+            <div class="section-flow">
+                <h3><i class="fa-solid fa-microscope"></i> الركيزة المورفولوجية</h3>
+                <p>تعتمد المنهجية البحثية على ترميم العجز العضوي للقشرة البصرية (V1) من خلال استحثاث خلايا جلد المريض جينياً. عبر معاملات ياماناكا، يتم خلق أنسجة "أعمدة تفضل بصرية" حية ومطابقة وراثياً، تُزهر بداخلها الآمال لتعويض المسارات البصرية المعطلة منذ عقود.</p>
+            </div>
+
+            <div class="section-flow" style="border-right-color: var(--neural-green);">
+                <h3>آلية التزامن السيبراني <i class="fa-solid fa-bolt-lightning"></i></h3>
+                <p>يمثل نظام BCI الركيزة التشغيلية للدماغ؛ حيث يقوم ببث ترددات تحفيزية تحاكي الحالة الكيميائية والكهربائية للدماغ في الفترات العمرية المبكرة. هذا "الخداع السيبراني الموجه" هو المحرك الذي يُجبر الدماغ البالغ على إعادة الدخول في مرحلة اللدونة لتبني الخلايا الجديدة.</p>
+            </div>
+        </section>
+
+        <!-- Visual Neural Path -->
+        <div class="neural-path-wrap">
+            <h2 style="font-family: var(--font-head); text-align: center; font-weight: 300; margin-bottom: 50px; font-size: 1.8rem;">المسار الإجرائي لمنظومة العلاج</h2>
+            <div class="neural-step">
+                <span class="step-label">ALGORITHM 01</span>
+                <h4>رسم الخارطة المفقودة</h4>
+                <p>توصيف النشاط المورفولوجي في القشرة البصرية باستخدام fMRI لبناء قاعدة بيانات دقيقة لمواضع العجز السينابسي.</p>
+            </div>
+            <div class="neural-step" style="border-right: 5px solid var(--accent);">
+                <span class="step-label">ALGORITHM 02</span>
+                <h4>البرمجة الخلوية iPSC</h4>
+                <p>استحثاث تمايز الخلايا الذاتية مختبرياً لتطوير ODCs حية قادرة على القيام بالمعالجة البصرية المركزية المفقودة.</p>
+            </div>
+            <div class="neural-step">
+                <span class="step-label">ALGORITHM 03</span>
+                <h4>المزامنة السحابية-العصبية</h4>
+                <p>تحميل النسيج الجديد تزامناً مع تفعيل واجهة الـ BCI لتحقيق الإبصار الثنائي (Stereopsis) في وقت قياسي.</p>
+            </div>
+        </div>
+
+        <!-- Typography-led Data -->
+        <section class="data-landscape">
+            <div class="stat-pod">
+                <div class="stat-giant">411B$</div>
+                <p class="stat-tag">خسارة الإنتاجية السنوية نتيجة إعاقات البصر غير المعالجة في البالغين</p>
+            </div>
+            <div class="stat-pod">
+                <div class="stat-giant">222M</div>
+                <p class="stat-tag">عدد المصابين المتوقع بحلول عام 2040 (أعلى انتشار مسجل في التاريخ)</p>
+            </div>
+            <div class="stat-pod">
+                <div class="stat-giant">100%</div>
+                <p class="stat-tag">نسبة المطابقة الجينية للخلايا لضمان استجابة النظام المناعي للدماغ</p>
+            </div>
+        </section>
+
+        <!-- Official Sources -->
+        <div style="text-align: center; padding: 40px 0;">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/31704700/" target="_blank" class="pill-ref">المرجع العلمي العالمي 🔗</a>
+            <a href="https://www.iapb.org/learn/vision-atlas/" target="_blank" class="pill-ref">رؤية أطلس 2025 🔗</a>
+            <a href="https://www.medicaldevice-network.com/news/neuralink-obtains-breakthrough-designation-fda-blindsight-device/" target="_blank" class="pill-ref">اعتماد FDA السيبراني 🔗</a>
+        </div>
+
+        <!-- NEW: Dedicated Peer Review Gateway -->
+        <section class="feedback-portal">
+            <h2>بوابة التعقيب الأكاديمي</h2>
+            <p>يسر الباحث حسين المانع دعوة المختصين وطواقم التحكيم في "إبداع" لتقديم مرئياتهم الفنية والمنهجية عبر نموذج الاستقصاء الرسمي.</p>
+            
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__nS93BRURUc3WkVaSVZCN1cySUwxQU1UT1Y5VlpZSS4u" 
+               target="_blank" class="cta-forms-btn">
+                تقديم الرأي العلمي <i class="fa-solid fa-up-right-from-square"></i>
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>مشروع بحثي علمي - مدارس المعرفة الأهلية بمكة المكرمة | حسين عبدالله المانع</p>
+        <p style="margin-top: 10px; font-family: monospace; font-weight: 200;">DESIGNED FOR EXCELLENCE IN MAWHIBA 2025</p>
+    </footer>
+
+    <script>
+        // أنيميشن التمرير التدريجي (نفس المحرك ولكن بسرعة أكثر انسيابية)
+        const obsOptions = { threshold: 0.2 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.transition = '1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+                }
+            });
+        }, obsOptions);
+
+        document.querySelectorAll('.section-flow, .neural-step, .stat-pod, .feedback-portal').forEach(div => {
+            div.style.opacity = '0';
+            div.style.transform = 'translateY(50px)';
+            observer.observe(div);
+        });
+    </script>
+
+</body>
+</html>
